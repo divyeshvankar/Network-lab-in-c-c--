@@ -1,0 +1,7 @@
+Question 1:
+When starting the TCP client application without the TCP server running, the client's connection attempt using the `connect()` function will fail. This is because there is no server listening on the specified IP address and port. The `perror("connectioin failed")` line in the code will print an error message indicating that the connection could not be established.
+
+Question 2:
+Starting the UDP client application without the UDP server running will not lead to an immediate error, as UDP is connectionless. The client's `sendto()` and `recvfrom()` operations will succeed, but the client will not receive any response from the server since there is no server to respond. The application might appear to hang if there's no timeout set for receiving data.
+
+In summary, the TCP client will show an error when the server is not running, while the UDP client might not immediately show an error but will not receive responses from the absent server.
